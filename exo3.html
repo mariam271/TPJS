@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3 - Conditions</title>
+    <script>
+        // Fonction pour vérifier l'âge
+        function verifierAge() {
+            // Récupération de la valeur entrée dans le champ d'âge
+            var age = document.getElementById("age").value;
+
+            // Conversion de la valeur en nombre
+            age = parseInt(age);
+
+            // Vérification de la validité de l'âge
+            if (isNaN(age) || age < 0) {
+                alert("Veuillez entrer un âge valide.");
+                return;
+            }
+
+            // Affichage du message en fonction de l'âge
+            if (age >= 18) {
+                alert("Vous êtes majeur.");
+            } else {
+                alert("Vous êtes mineur.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Exercice 3 - Conditions</h1>
+    <form onsubmit="verifierAge(); return false;">
+        <label for="age">Entrez votre âge :</label>
+        <input type="text" id="age" name="age" required>
+        <button type="submit">Vérifier</button>
+    </form>
+</body>
+</html>

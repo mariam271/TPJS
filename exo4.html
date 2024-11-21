@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4 - Boucles</title>
+    <script>
+        // Fonction pour afficher la table de multiplication
+        function afficherTable() {
+            // Récupère le nombre saisi par l'utilisateur
+            var nombre = parseInt(document.getElementById("nombre").value);
+
+            // Vérifie si la saisie est un nombre valide
+            if (isNaN(nombre)) {
+                alert("Veuillez entrer un nombre valide.");
+                return;
+            }
+
+            // Affiche la table de multiplication avec une boucle for
+            var resultatFor = "Table de multiplication avec 'for' :<br>";
+            for (var i = 1; i <= 10; i++) {
+                resultatFor += nombre + " x " + i + " = " + (nombre * i) + "<br>";
+            }
+            document.getElementById("resultatFor").innerHTML = resultatFor;
+
+            // Affiche la table de multiplication avec une boucle while
+            var resultatWhile = "Table de multiplication avec 'while' :<br>";
+            var j = 1;
+            while (j <= 10) {
+                resultatWhile += nombre + " x " + j + " = " + (nombre * j) + "<br>";
+                j++;
+            }
+            document.getElementById("resultatWhile").innerHTML = resultatWhile;
+
+            // Affiche la table de multiplication avec une boucle do...while
+            var resultatDoWhile = "Table de multiplication avec 'do...while' :<br>";
+            var k = 1;
+            do {
+                resultatDoWhile += nombre + " x " + k + " = " + (nombre * k) + "<br>";
+                k++;
+            } while (k <= 10);
+            document.getElementById("resultatDoWhile").innerHTML = resultatDoWhile;
+        }
+    </script>
+</head>
+<body>
+    <h1>Exercice 4 - Boucles</h1>
+    <form onsubmit="afficherTable(); return false;">
+        <label for="nombre">Entrez un nombre :</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <button type="submit">Afficher la table</button>
+    </form>
+
+    <h2>Résultats</h2>
+    <div id="resultatFor"></div>
+    <div id="resultatWhile"></div>
+    <div id="resultatDoWhile"></div>
+</body>
+</html>

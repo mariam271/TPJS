@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 8 - Manipulation de l'objet document</title>
+    <script>
+        // Fonction pour changer la couleur de fond
+        function changerCouleur() {
+            // Récupère la couleur entrée par l'utilisateur
+            var couleur = document.getElementById("couleur").value;
+
+            // Modifie la couleur de fond du body de la page
+            document.body.style.backgroundColor = couleur;
+        }
+    </script>
+</head>
+<body>
+    <h1>Exercice 8 - Manipulation de l'objet document</h1>
+    <p>Entrez une couleur et cliquez sur le bouton pour changer la couleur de fond de la page.</p>
+
+    <!-- Champ de saisie pour la couleur -->
+    <input type="text" id="couleur" placeholder="Ex: rouge, #ff0000, bleu" required>
+    
+    <!-- Bouton pour appliquer la couleur -->
+    <button onclick="changerCouleur()">Changer la couleur de fond</button>
+</body>
+</html>
